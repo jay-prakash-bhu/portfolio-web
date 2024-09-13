@@ -217,6 +217,9 @@ nav .fas{
 #ui{
     margin-left: 15px;
 }
+#Message{
+    resize: none;
+}
 
 @media only screen and (max-width:600px){
  
