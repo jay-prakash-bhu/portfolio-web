@@ -172,6 +172,11 @@ nav ul li a:hover::after{
 .btn.btn2{
     display: inline-block;
     background: #ff004f;
+     color: #ded4d4;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 15px;
+    text-decoration: none;
 }
 .contact-right form{
     width: 100%;
