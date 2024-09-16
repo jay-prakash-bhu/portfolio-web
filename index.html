@@ -1,21 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Count Charecter</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+        
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 </head>
 <body>
-  <div class="container">
-    <h1>count character</h1>
-    <textarea class="text" id="text"  placeholder="write here" maxlength="50" autofocus ></textarea>
-    <div class="count">
-       <span class="total">total 0 </span>
-       <span><button type="btn" class="reset" onclick="reset()">reset</button></span>
-      <span class="remain">remain 0 </span>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="WhatsApp Image 2024-09-07 at 20.13.45_fc79a80b.jpg" alt="" class="logo">
+                
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <!-- <li><a href="#">Services</a></li> -->
+                    <li><a href="#project">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="ri-close-line fas" onclick="closemenu()"></i>
+                </ul>
+                <i class="ri-menu-line fas" onclick="openmenu()"></i>
+            </nav>
+            <div class="text">
+                <p id="ui">UI/UX Designer</p>
+                <h1>Hi,I'm <span>Jay Prakash</span> <br>BHU(Varanasi)</h1>
+            </div>
+        </div>
     </div>
-  </div>
-  <script src="script.js"></script>
+    <!-- ---------------------About---------------------------------------- -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="pexels-ibertola-2681319.jpg" alt="" >
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        <i style="font-size: 16px;">Hi,i'm jay a passionate web developer with a focus on building responsive, user-friendly websites and applications.with experience in 
+                        javascript,<br>i love transforming ideas into digital reality.
+                        i specialize in front-end development with react.js and have worked on various projects,(projects section).my goal is 
+                        to creat solution that not only meet client needs but also exceed expectations. <br>
+                        when i am not coding,i enjoy cricket match,read biography ,<b style="color: #ff004f;">use to go ganga ghat(assi ghat).</b>
+                        feel free to check out my work and get in touch if you'd like to collaborate!</i>
+                        
+                    </p>
+                    
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing web/App interfaces</li>
+                            <li><span>Web Developer</span><br>Web app/Page Developer</li>
+                            <li><span>App Developer</span><br>Building websites</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2021-2024</span><br>works on project given by university</li>
+                            <li><span>2024-2026</span><br></li>
+                            <li><span>present</span><br>frontend developer</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2021</span><br>collage start</li>
+                            <li><span>2024</span><br>b.sc(Bhu)</li>
+                            <li><span>2026</span><br>m.sc(Bhu)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- -------------------portfolio------------ -->
+<header id="project">
+    
+</header>
+
+<div class="body1">
+
+    <div class="card-container">
+        <div class="card">
+            <div class="image-box">
+                <img src="3.jpg" alt="">
+                <div class="imagr-text">Weather-web <br>Touch Here</div>
+            </div>
+            <div class="content" id="content1">
+                <h2>Weather</h2>
+                <p>Enter your city to check weather</p>
+                <p>visit</p>
+                <a class="link" href="weather/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </div>
+    
+        <div class="card">
+            <div class="image-box">
+                <img src="5.jpg" alt="">
+                <div class="imagr-text">Stopwatch <br>Touch Here</div>
+            </div>
+            <div class="content">
+                <h2>Stopwatch</h2>
+                <p>Formate <br>min/sec/msec</p>
+                <a class="link" href="Stopwatch/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </div>
+    
+        <div class="card">
+            <div class="image-box">
+                <img src="4.jpg" alt="">
+                <div class="imagr-text">Characters count <br>Touch Here</div>
+            </div>
+            <div class="content">
+                <h2>Characters Count</h2>
+                <p>it will count Characters <br></p>
+                <a href="CharecterCount/" class="link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </div>
+    
+        <div class="card">
+            <div class="image-box">
+                <img src="1.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>jay</h2>
+                <p>stay connected</p>
+            </div>
+        </div>
+    
+    
+    
+    
+    
+    </div>
+
+
+</div>
+
+<br><br><br><br><br><br>
+ 
+<!-- 
+    -------------------contact------------------------------ -->
+
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p> <i class="ri-mail-line"></i> @gmail.com</p>
+                        <p> <i class="ri-phone-fill"></i> 4124612</p>
+                        <div class="social-icons">
+                            <a href=""><i class="ri-facebook-line"></i></a>
+                            <a target="_blank" href="https://www.instagram.com/stephen_bhu?igsh=MWU3NjF3bHI0YTg4eA==" ><i class="ri-instagram-line"></i></a>
+                            <a target="_blank" href="https://youtube.com/@stephen0115?si=k8apGqPLcvlDwFsz"><i class="ri-youtube-line"></i></a>
+                            <a target="_blank" href="http://www.linkedin.com/in/jay-prakash-kumar-bhu"><i class="ri-linkedin-box-fill"></i></a>
+                            <a target="_blank" href="https://www.quora.com/profile/JAY-PRAKASH-KUMAR-439?ch=10&oid=2773380386&share=847594b7&srid=3S9KgL&target_type=user"><i class="fa-brands fa-quora"></i></a>
+                        </div>
+                        <a href="cv 0f bill gates.pdf" 
+                       download="" class="btn btn2" onclick="alert('this is not my CV.it is just a formate-thanks')">Download CV</a>
+                    </div>
+
+                    <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                            <input type="text" name="Name" id="Name" placeholder="Your Name" required>
+                            <input type="email" name="Email" id="Email" placeholder="Your Email"required>
+                            <textarea name="Message" id="Message" rows="4" placeholder="Your Message" maxlength="100"></textarea>
+                            <button type="submit" class="btn btn2" id="submit">Submit</button>
+                        </form>
+                        <span id="msg"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>PrivacyPolicies.com © 2024 All rights reserved <i>jay-team <i class="ri-hearts-line"></i> </i></p>
+            </div>
+        </div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
