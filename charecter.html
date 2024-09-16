@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count Charecter</title>
+  <style>
+    *{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(67, 73, 73);
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(32, 188, 92);
+    padding: 20px;
+    flex-direction: column;
+    border-radius: 15px;
+}
+.text{ 
+    margin: 10px;
+    width: 100%;
+    resize: none;
+    padding: 8px;
+    border-radius: 5px;
+    border-color: rgb(139, 207, 22);
+    
+}
+.count{
+    display: flex;
+    justify-content: space-between;
+}
+span{
+    font-size: 25px;
+    padding: 20px;
+}
+.reset{
+    padding: 10px;
+    font-size: 28px;
+    color: rgb(242, 78, 7);
+    background-color: rgb(32, 188, 92);
+    border-radius: 5px;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>count character</h1>
+    <textarea class="text" id="text"  placeholder="write here" maxlength="50" autofocus ></textarea>
+    <div class="count">
+       <span class="total">total 0 </span>
+       <span><button type="btn" class="reset" onclick="reset()">reset</button></span>
+      <span class="remain">remain 0 </span>
+    </div>
+  </div>
+  <script>
+    var textEl=document.querySelector('.text')
+
+var count=0;
+
+var totalEl=document.querySelector('.total')
+
+var remainEl=document.querySelector('.remain')
+
+var resetEl =document.querySelector('.reset')
+
+textEl.addEventListener('keyup',jay)
+
+textEl.addEventListener('paste',jay)
+
+function jay(){
+  count++;
+  
+  if(count<=50){
+  console.log(count);
+  totalEl.innerHTML =`total ${count}`
+  remainEl.innerHTML=`remain ${50-count}`
+  }
+  }
+  function reset(){
+    count=0;
+    totalEl.innerHTML =`total ${count}`
+  remainEl.innerHTML=`remain ${50-count}`
+  textEl.value=""
+    
+  }
+  </script>
+</body>
+</html>

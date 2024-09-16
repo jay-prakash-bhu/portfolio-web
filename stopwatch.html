@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+    margin: 0%;
+    padding: 0%;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    color: rgb(233, 237, 219);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background: rgb(85, 83, 79);
+}
+#heading{
+    color: aqua
+}
+#dis{
+    color: rgb(234, 18, 176)
+}
+.stop{
+    padding: 15px;
+    margin-bottom: 2px;
+}
+.container{
+    
+    background-color: rgb(65, 63, 63);
+    padding: 52px;
+    max-width: 300px;
+    text-align: center;
+    border-radius: 100px;
+
+}
+.btn{
+    background-color: rgb(65, 63, 63);
+    padding: 15px;
+    color: rgb(109, 231, 44);
+    font-size: 18px;
+    cursor: pointer;
+}
+.btn:hover{
+    zoom: 103%;
+}
+.display{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#heart{
+    color: red;
+    
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+       <div class="stop"> <h1 id="heading">Stopwatch</h1></div>
+       <div class="display">
+       <h1 id="dis">00 : 00 : 00</h1>
+       </div>
+       <div class="btn">
+        <button onclick="start()" class="btn" id="start">Start</button>
+        <button onclick="stop()" class="btn" id="stop">Stop</button>
+        <button onclick="reset()" class="btn" id="reset">Reset</button>
+       </div>
+       <div class="footer">
+        jay-team <i id="heart" class="fa-regular fa-heart"></i>
+       </div>
+    </div>
+<script> 
+     var isStop = true;
+ var msec=0;
+ var sec=0;
+ var min=0;
+ var dis=document.querySelector('#dis');
+function start(){
+   
+
+    if(isStop==true){
+        isStop=false;
+        timer();
+    }
+
+}
+function timer(){
+   
+    if(isStop==false){
+        msec++;
+        if(msec==100){
+            msec=0;
+            sec++
+        }
+        if(sec==60){
+            sec=0;
+            min++;
+        }
+        let Min=min.toString().padStart(2, '0')
+        let Sec=sec.toString().padStart(2, '0')
+        let Msec=msec.toString().padStart(2, '0')
+        
+    dis.innerHTML=`${Min} : ${Sec} : ${Msec} `;
+        setTimeout(timer,1)
+    }
+}
+function stop(){
+    isStop=true;
+}
+function reset(){
+    
+    isStop=true;
+    msec=0;
+    sec=0;
+     min=0;
+     dis.innerHTML="00 : 00 : 00"
+
+}
+</script>
+
+</body>
+</html>
