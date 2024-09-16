@@ -1,30 +1,43 @@
-var textEl=document.querySelector('.text')
+var tablinks = document.getElementsByClassName("tab-links")
+        var tabcontents=document.getElementsByClassName("tab-contents")
 
-var count=0;
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link")
+            }
 
-var totalEl=document.querySelector('.total')
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab")
+            }
 
-var remainEl=document.querySelector('.remain')
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab")
+        }
 
-var resetEl =document.querySelector('.reset')
 
-textEl.addEventListener('keyup',jay)
+        var sidemenu= document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right="0";
+        }
+        function closemenu(){
+            sidemenu.style.right="-200px";
+        }
 
-textEl.addEventListener('paste',jay)
 
-function jay(){
-  count++;
-  
-  if(count<=50){
-  console.log(count);
-  totalEl.innerHTML =`total ${count}`
-  remainEl.innerHTML=`remain ${50-count}`
-  }
-  }
-  function reset(){
-    count=0;
-    totalEl.innerHTML =`total ${count}`
-  remainEl.innerHTML=`remain ${50-count}`
-  textEl.value=""
-    
-  }
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxoyGBS64VVaLnVepoqW5n6_XMjfxENnhP0-Kp6U2YwAMtn8YPq4zR22uN15LVwkG0/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg=document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML="Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML=""
+                },500)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
